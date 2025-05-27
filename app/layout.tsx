@@ -5,7 +5,7 @@ import Menu from "@/components/ui/menu/Menu";
 import LenisScrollProvider from "@/utils/lenis";
 
 export const metadata: Metadata = {
-    title: "azh.rz",
+    title: "ethzer",
     description: "Portofolio",
 };
 
