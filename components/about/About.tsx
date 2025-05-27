@@ -59,7 +59,7 @@ export default function About() {
             <div className={styles.about__introduction} ref={introRef}>
 
                 <p data-gl-text>
-                    Frontend engineer and UI/UX Enthusast, <br />
+                    Junior frontend developer and UI/UX Enthusast, <br />
                     crafting smooth, intuitive user experiences <br />
                     focused on clean, elegant, functional design.
                 </p>

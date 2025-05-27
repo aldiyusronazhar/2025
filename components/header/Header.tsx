@@ -64,7 +64,7 @@ export default function Header() {
 
                 <div className={styles.header__column}>
                     <p className={styles.header__role} data-gl-text="uppercase">
-                        Frontend Engineer<br />
+                        Junior Frontend Developer<br />
                         UI/UX Enthusiast
                     </p>
                     <p className={styles.header__year} data-gl-text>
