@@ -1,0 +1,289 @@
+@font-face {
+  font-family: 'Panchang-Extralight';
+  src: url('/fonts/Panchang/Panchang-Extralight.woff2') format('woff2'),
+       url('/fonts/Panchang/Panchang-Extralight.woff') format('woff'),
+       url('/fonts/Panchang/Panchang-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Panchang-Light';
+  src: url('/fonts/Panchang/Panchang-Light.woff2') format('woff2'),
+       url('/fonts/Panchang/Panchang-Light.woff') format('woff'),
+       url('/fonts/Panchang/Panchang-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Panchang-Regular';
+  src: url('/fonts/Panchang/Panchang-Regular.woff2') format('woff2'),
+       url('/fonts/Panchang/Panchang-Regular.woff') format('woff'),
+       url('/fonts/Panchang/Panchang-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Panchang-Medium';
+  src: url('/fonts/Panchang/Panchang-Medium.woff2') format('woff2'),
+       url('/fonts/Panchang/Panchang-Medium.woff') format('woff'),
+       url('/fonts/Panchang/Panchang-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Panchang-Semibold';
+  src: url('/fonts/Panchang/Panchang-Semibold.woff2') format('woff2'),
+       url('/fonts/Panchang/Panchang-Semibold.woff') format('woff'),
+       url('/fonts/Panchang/Panchang-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Panchang-Bold';
+  src: url('/fonts/Panchang/Panchang-Bold.woff2') format('woff2'),
+       url('/fonts/Panchang/Panchang-Bold.woff') format('woff'),
+       url('/fonts/Panchang/Panchang-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Panchang-Extrabold';
+  src: url('/fonts/Panchang/Panchang-Extrabold.woff2') format('woff2'),
+       url('/fonts/Panchang/Panchang-Extrabold.woff') format('woff'),
+       url('/fonts/Panchang/Panchang-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+/* Variable font */
+@font-face {
+  font-family: 'Panchang-Variable';
+  src: url('/fonts/Panchang/Panchang-Variable.woff2') format('woff2'),
+       url('/fonts/Panchang/Panchang-Variable.woff') format('woff'),
+       url('/fonts/Panchang/Panchang-Variable.ttf') format('truetype');
+  font-weight: 200 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'Medium'; 
+  src: url('/fonts/Medium/Medium.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ===== Hanken ===== */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('/fonts/HankenGrotesk/HankenGrotesk-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('/fonts/HankenGrotesk/HankenGrotesk-Italic-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ===== Diether ===== */
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/Diether-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/Diether-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/Diether-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/Diether-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/Diether-Heavy.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Diether Italic ===== */
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/DietherItalic-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/DietherItalic-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/DietherItalic-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/DietherItalic-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether';
+  src: url('/fonts/Diether/DietherItalic-Heavy.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ===== Diether Round ===== */
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRound-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRound-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRound-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRound-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRound-Heavy.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Diether Round Italic ===== */
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRoundItalic-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRoundItalic-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRoundItalic-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRoundItalic-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Diether Round';
+  src: url('/fonts/Diether/DietherRoundItalic-Heavy.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+@import './reset.scss';
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: 'Hanken Grotesk', Arial, Helvetica, sans-serif;
+  font-size: calc(100vw / 1920 * 10);
+  font-variation-settings: 'wght' 400;
+  overflow: hidden auto;
+   @media (max-width: 768px) {
+    font-size: calc(100vw / 320 * 10);
+  }
+}
+
+body {
+  color: #fff;
+  background: #000;
+}
+
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+::selection {
+  color: #000;
+  background: #ff0000;
+}
