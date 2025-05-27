@@ -17,7 +17,7 @@ export const projects: ProjectData[] = [
     {
         id: '1',
         title: 'ASCII 3D Preview',
-        subtitle: 'NextJS, Three.js, GLSL, STL',
+        subtitle: 'NextJS, Three.js, STL',
         description: `ASCII-style 3D model rendered from an .stl file using Three.js in a Next.js environment.`,
         media: [
             { src: '/projects/ASZCI.mp4', type: 'video' }
