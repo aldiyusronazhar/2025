@@ -1,0 +1,42 @@
+.tagHover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  padding: 6px 6px;
+  background-color: #1c1c1c;
+  color: white;
+  border-radius: 4px;
+  font-size: 1.77rem;
+  font-weight: 500;
+  z-index: 9999;
+  filter: blur(4px);
+  scale: 0.95;
+  transition: filter 0.3s;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 8px;
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: white;
+  border-radius: 2px;
+}
+
+.tagHover__arrow {
+  font-weight: bold;
+}
+
+.tagHover__text {
+  user-select: none;
+}
+
