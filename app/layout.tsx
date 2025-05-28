@@ -16,12 +16,15 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <meta name="theme-color" content="#ff0000" />
+            </head>
             <body>
-                 <LenisScrollProvider>
+                <LenisScrollProvider>
                 {/* <Cursor /> */}
-                 <Menu/>
+                <Menu />
                 {children}
-                 </LenisScrollProvider>
+                </LenisScrollProvider>
             </body>
         </html>
     );

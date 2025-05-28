@@ -5,6 +5,7 @@ import About from "@/components/about/About";
 // import VerticalTag from "@/components/ui/verticaltag/VerticalTag";
 import Projects from "@/components/projects/Projects";
 import { projects } from "@/components/projects/projectsData";
+// import Ascii from "@/components/ascii/AsciiGsap";
 
 
 import Sez from "@/components/ui/sez/Sez";
@@ -12,6 +13,7 @@ import Sez from "@/components/ui/sez/Sez";
 export default function Home() {
     return (
         <>
+            {/* <Ascii/> */}
             {/* <VerticalTag/> */}
             <div className={styles.page__wrapper}>
                 <Header />
@@ -36,11 +38,9 @@ export default function Home() {
                         sez3: { shuffle: true, duration: 3000, interval: 4000, loop: true }
                     }}
                 />
-            <div className={styles.page__projects}>
                 {projects.map((project) => (
                     <Projects key={project.id} project={project} />
                 ))}
-            </div>
 
 
             </div>
