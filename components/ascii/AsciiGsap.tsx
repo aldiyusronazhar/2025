@@ -123,9 +123,13 @@ const Ascii = () => {
 
                 myMesh.rotation.x = (-90 * Math.PI) / 180;
 
+                // myMesh.geometry.computeBoundingBox();
+                // const bbox = myMesh.geometry.boundingBox;
+                // myMesh.position.y = (bbox.max.z - bbox.min.z) / 5;
                 myMesh.geometry.computeBoundingBox();
-                const bbox = myMesh.geometry.boundingBox;
+                const bbox = myMesh.geometry.boundingBox as THREE.Box3;
                 myMesh.position.y = (bbox.max.z - bbox.min.z) / 5;
+
 
                 scene.add(myMesh);
 
