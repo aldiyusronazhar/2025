@@ -1,46 +1,46 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './About.module.scss';
 import TagHover from '@/components/ui/taghover/TagHover';
 
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-    const introRef = useRef<HTMLDivElement | null>(null);
-    useEffect(() => {
-        if (!introRef.current) return;
-
-        const elements = introRef.current.querySelectorAll('p');
-
-        gsap.fromTo(
-            elements,
-            {
-                opacity: 0,
-                filter: 'blur(10px)',
-                y: 30,
-            },
-            {
-                opacity: 1,
-                filter: 'blur(0px)',
-                y: 0,
-                stagger: 0.3,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: introRef.current,
-                    start: 'top 80%',
-                    end: 'bottom 60%',
-                    scrub: true,
-                },
-            }
-        );
-
-        return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
-    }, []);
+    // const introRef = useRef<HTMLDivElement | null>(null);
+    // useEffect(() => {
+    //     if (!introRef.current) return;
+    //
+    //     const elements = introRef.current.querySelectorAll('p');
+    //
+    //     gsap.fromTo(
+    //         elements,
+    //         {
+    //             opacity: 0,
+    //             filter: 'blur(10px)',
+    //             y: 30,
+    //         },
+    //         {
+    //             opacity: 1,
+    //             filter: 'blur(0px)',
+    //             y: 0,
+    //             stagger: 0.3,
+    //             ease: 'power2.out',
+    //             scrollTrigger: {
+    //                 trigger: introRef.current,
+    //                 start: 'top 80%',
+    //                 end: 'bottom 60%',
+    //                 scrub: true,
+    //             },
+    //         }
+    //     );
+    //
+    //     return () => {
+    //         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    //     };
+    // }, []);
 
 
 
@@ -56,7 +56,8 @@ export default function About() {
                 text="Aldi Yusron__"
                 iconBg="#ff6700"
             />
-            <div className={styles.about__introduction} ref={introRef}>
+            {/* <div className={styles.about__introduction} ref={introRef}> */}
+            <div className={styles.about__introduction}>
 
                 <p data-gl-text>
                     Junior frontend developer and UI/UX Enthusast, <br />

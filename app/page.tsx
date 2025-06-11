@@ -5,7 +5,7 @@ import About from "@/components/about/About";
 // import VerticalTag from "@/components/ui/verticaltag/VerticalTag";
 import Projects from "@/components/projects/Projects";
 import { projects } from "@/components/projects/projectsData";
-// import Ascii from "@/components/ascii/AsciiGsap";
+// import Ascii from "@/components/ascii/3dGsap";
 
 
 import Sez from "@/components/ui/sez/Sez";

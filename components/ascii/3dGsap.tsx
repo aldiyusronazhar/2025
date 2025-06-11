@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import styles from "./Ascii.module.scss";
 import * as THREE from "three";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
-import { AsciiEffect } from "three/examples/jsm/effects/AsciiEffect.js";
 import { gsap } from "gsap";
 
 const Ascii = () => {
@@ -12,7 +11,8 @@ const Ascii = () => {
 
     useEffect(() => {
         // const isMobile = window.innerWidth < 768;
-        // if (isMobile) return
+        // if (isMobile) return;
+
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0, 0, 0);
 
@@ -40,35 +40,13 @@ const Ascii = () => {
 
         const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 2000);
 
-        const renderer = new THREE.WebGLRenderer();
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(sizes.width, sizes.height);
+        renderer.setPixelRatio(window.devicePixelRatio);
 
-        let effect: AsciiEffect;
-        // let characters = " .:-+*=%@#";
-        // let characters = " +:-.#@%=*";
-        // let characters = " .:-+#@%=*";
-        let characters = " .:-+#@%@#  #@%@#+:-.";
-        // const effectSize = { amount: 0.205 };
-        const effectSize = { amount: 0.175 };
-        const ASCIIColor = "#777";
-
-        function createEffect() {
-            effect = new AsciiEffect(renderer, characters, {
-                invert: true,
-                resolution: effectSize.amount,
-            });
-            effect.setSize(sizes.width, sizes.height);
-            effect.domElement.style.color = ASCIIColor;
-            effect.domElement.style.backgroundColor = "black";
-            effect.domElement.classList.add(styles.asciiBox);
-
-            const asciiContainer = containerRef.current;
-            if (asciiContainer) {
-                asciiContainer.appendChild(effect.domElement);
-            }
+        if (containerRef.current) {
+            containerRef.current.appendChild(renderer.domElement);
         }
-
-        createEffect();
 
         const keyframes = [
             {
@@ -88,29 +66,13 @@ const Ascii = () => {
                 rz: -0.10034508895856986,
             },
             {
-                px: -1.1034436569318822,
-                py: 0.7620751528401553,
-                pz: 1.9652184488834998,
-                rx: -0.029276658833755884,
-                ry: -0.18859301653013388,
-                rz: -0.005490215016934513,
+                px: 3.6492892876810172,
+                py: 1.4758909584810571,
+                pz: 4.25,
+                rx: -0.2220876074269339,
+                ry: 0.684948575340779,
+                rz: 0.14189637418696438,
             },
-            // {
-            //     px: 3.6492892876810172,
-            //     py: 1.4758909584810571,
-            //     pz: 4.25,
-            //     rx: -0.2220876074269339,
-            //     ry: 0.684948575340779,
-            //     rz: 0.14189637418696438,
-            // },
-            // {
-            //     px: 3.6492892876810172,
-            //     py: 1.4758909584810571,
-            //     pz: 4.25,
-            //     rx: -0.2220876074269339,
-            //     ry: 0.684948575340779,
-            //     rz: 0.14189637418696438,
-            // },
         ];
 
         const loadModel = () => {
@@ -120,7 +82,6 @@ const Ascii = () => {
 
                 geometry.computeVertexNormals();
                 myMesh.geometry.center();
-
                 myMesh.rotation.x = (-90 * Math.PI) / 180;
 
                 myMesh.geometry.computeBoundingBox();
@@ -129,7 +90,6 @@ const Ascii = () => {
 
                 scene.add(myMesh);
 
-                // Set initial camera position
                 const firstKey = keyframes[0];
                 camera.position.set(firstKey.px, firstKey.py, firstKey.pz);
                 camera.rotation.set(firstKey.rx, firstKey.ry, firstKey.rz);
@@ -140,7 +100,7 @@ const Ascii = () => {
                 const tick = () => {
                     const elapsedTime = clock.getElapsedTime();
                     myMesh.rotation.z = elapsedTime / 3;
-                    effect.render(scene, camera);
+                    renderer.render(scene, camera);
                     requestAnimationFrame(tick);
                 };
 
@@ -151,7 +111,6 @@ const Ascii = () => {
         const fadeStart = window.innerHeight * 2;
         const fadeEnd = window.innerHeight * 2.5;
 
-        // Target objects for smooth GSAP animation
         const cameraTarget = {
             x: keyframes[0].px,
             y: keyframes[0].py,
@@ -173,7 +132,6 @@ const Ascii = () => {
             const from = keyframes[data];
             const to = keyframes[data + 1];
 
-            // Calculate target positions
             const targetX = from.px + (to.px - from.px) * process + 0.2 + (window.innerWidth - 1536) * 0.0004;
             const targetY = from.py + (to.py - from.py) * process;
             const targetZ = from.pz + (to.pz - from.pz) * process;
@@ -181,7 +139,6 @@ const Ascii = () => {
             const targetRy = from.ry + (to.ry - from.ry) * process;
             const targetRz = from.rz + (to.rz - from.rz) * process;
 
-            // If it's initial load and user already scrolled, set position immediately
             if (isInitialLoad && scrollY > 50) {
                 cameraTarget.x = targetX;
                 cameraTarget.y = targetY;
@@ -193,25 +150,6 @@ const Ascii = () => {
                 camera.rotation.set(cameraTarget.rx, cameraTarget.ry, cameraTarget.rz);
                 isInitialLoad = false;
             } else {
-
-                // Normal smooth
-                // gsap.to(cameraTarget, {
-                //     x: targetX,
-                //     y: targetY,
-                //     z: targetZ,
-                //     rx: targetRx,
-                //     ry: targetRy,
-                //     rz: targetRz,
-                //     duration: isInitialLoad ? 0 : 0.8,
-                //     ease: "power2.out",
-                //     onUpdate: () => {
-                //         camera.position.set(cameraTarget.x, cameraTarget.y, cameraTarget.z);
-                //         camera.rotation.set(cameraTarget.rx, cameraTarget.ry, cameraTarget.rz);
-                //     }
-                // });
-
-
-                // Cinematic Smooth
                 gsap.to(cameraTarget, {
                     x: targetX,
                     y: targetY,
@@ -227,31 +165,10 @@ const Ascii = () => {
                     }
                 });
 
-
                 isInitialLoad = false;
             }
 
-            // Handle fade effect with GSAP
-            if (scrollY <= fadeStart) {
-                gsap.to(effect.domElement, {
-                    opacity: 1,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            } else if (scrollY > fadeStart && scrollY < fadeEnd) {
-                const fadeProgress = 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
-                gsap.to(effect.domElement, {
-                    opacity: fadeProgress,
-                    duration: 0.1,
-                    ease: "none"
-                });
-            } else {
-                gsap.to(effect.domElement, {
-                    opacity: 0,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            }
+            // Optional: Bisa tambahin fade efek DOM di atas canvas kalau mau
         };
 
         scrollAnimation();
@@ -259,12 +176,10 @@ const Ascii = () => {
 
         window.addEventListener("scroll", scrollAnimation);
 
-        // Handle resize
         const handleResize = () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
-            effect.setSize(window.innerWidth, window.innerHeight);
         };
 
         window.addEventListener("resize", handleResize);
@@ -278,13 +193,12 @@ const Ascii = () => {
     return (
         <div className={styles.container}>
             <div style={{ height: "300dvh", position: "relative" }}>
-                <div id="ascii-container" ref={containerRef} />
+                <div id="canvas-container" ref={containerRef} />
             </div>
-            <div className={styles.header}>
-                {/* <h1>HELOO</h1> */}
-            </div>
+            <div className={styles.header} />
         </div>
     );
 };
 
 export default Ascii;
+

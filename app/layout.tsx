@@ -20,11 +20,10 @@ export default function RootLayout({
                 <meta name="theme-color" content="#ff0000" />
             </head>
             <body>
-                <LenisScrollProvider>
+                <LenisScrollProvider/>
                 {/* <Cursor /> */}
                 <Menu />
                 {children}
-                </LenisScrollProvider>
             </body>
         </html>
     );
