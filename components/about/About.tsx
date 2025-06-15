@@ -116,7 +116,7 @@ export default function About() {
                             <br />
                             <a
                                 className={styles.about__information__link}
-                                href="https://instagram.com/aldiyusronzhar/"
+                                href="https://instagram.com/az2007415/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
