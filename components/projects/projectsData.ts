@@ -15,6 +15,17 @@ export interface ProjectData {
 
 export const projects: ProjectData[] = [
     {
+        id: '7',
+        title: 'AI Landing Page',
+        subtitle: 'Figma, Inkscape',
+        description: `A futuristic AI-themed landing page featuring dynamic energy star visuals.`,
+        media: [
+            { src: '/projects/Ethzer-AI.mp4', type: 'video' }
+        ],
+        link: 'https://github.com/aldiyusronazhar',
+        client: 'See ',
+    },
+    {
         id: '1',
         title: 'ASCII 3D Preview',
         subtitle: 'NextJS, Three.js, STL',

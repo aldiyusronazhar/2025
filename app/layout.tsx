@@ -17,8 +17,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <meta name="theme-color" content="#ff0000" />
-            </head>
+                <meta name="theme-color" content="#ff0000" /></head>
             <body>
                 <LenisScrollProvider/>
                 {/* <Cursor /> */}
