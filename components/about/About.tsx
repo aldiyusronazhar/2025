@@ -183,7 +183,7 @@ export default function About() {
                         </h2>
 
                         <p className={styles.about__brands__description} data-gl-text>
-                            Aka Group, Core Initative, TM News
+                            Aka Group, TM News
                         </p>
                     </div>
                 </div>
